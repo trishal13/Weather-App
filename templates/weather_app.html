@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/css/weather_app.css">
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <main>
+        <div class="city-form">
+            <form action="">
+                <div>
+                    <input type="text" placeholder="Enter city.........." name="city" id="city">
+                    <button type="submit">Get Weather</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="city-weather">
+            {% if problem == 'found' %}
+                <div class="weather-details">
+                    <div class="city-details">
+                        <p>{{city}}, {{country}}, {{date}}</p>
+                        <div class="coordinates">
+                            <p>{{lon}}&deg;,</p>
+                            <p>{{lat}}&deg;</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="weather">
+                        <h2>{{temp}}&deg;C</h2>
+                        <div>
+                            <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="weather-icon" width="150px" height="150px">
+                            <p>{{descripton}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="more-details">
+                        <div class="details1">
+                            <p>Feels like: {{feels_like}}&deg;C</p><hr>
+                            <p>Min_Temp: {{temp_min}}&deg;C</p><hr>
+                            <p>Max_Temp: {{temp_max}}&deg;C</p><hr>
+                            <p>Visibility: {{visibility}}m</p>
+                        </div>
+                        <div class="details2">
+                            <p>Pressure: {{pressure}}Pa</p><hr>
+                            <p>Humidity: {{humidity}}%</p><hr>
+                            <p>Wind_Speed: {{wind_speed}}km/hr</p><hr>
+                            <p>Wind_Degree: {{wind_deg}}&deg;</p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="not-found">Entered city is not in our data base</div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

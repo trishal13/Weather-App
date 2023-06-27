@@ -1,0 +1,99 @@
+body{
+    background-color: #263238;
+    color: white;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.city-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.city-weather{
+    width: 90%;
+    margin-top: 10px;
+    background-color: #313e45;
+    border-radius: 40px;
+}
+.weather-details{
+    padding: 2% 10%;
+}
+.city-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: large;
+}
+
+.coordinates{
+    display: flex;
+}
+.weather{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    padding-right: 5%;
+}
+.weather div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20%;
+    align-items: end;
+    font-style: italic;
+}
+.weather div p{
+    margin-top: 0px;
+}
+.weather h2{
+    font-size: xx-large;
+    padding-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.more-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.details1{
+    padding: 0 10%;
+}
+.details2{
+    padding: 0 10%;
+}
+hr{
+    border: 1px solid #a8c3d0;
+}
+input[type="text"] {
+    padding: 5px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    padding: 5px 10px;
+    background-color: #3b86ae;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #166088;
+}
