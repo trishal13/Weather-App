@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 import os
 from dotenv import load_dotenv
 import requests
@@ -13,12 +12,13 @@ def Get_Weather(request):
     problem="none"
     try:
         city=str(request.GET.get('city'))
+        if city=='None':
+            city='India'
         url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'
-        key=os.getenv('api_key')
+        key=os.getenv('API_KEY')
         result=requests.get(url.format(city,key))
         if result:
             json=result.json()
-            print(json)
             problem="found"
         else:
             problem="not_found"
